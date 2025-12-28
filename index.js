@@ -15,3 +15,10 @@ function getComputerChoice() {
     }
 }
 
+function getHumanChoice() {
+
+    return prompt("Please enter one of these 3 values: rock, paper, scissors");
+}
+
+console.log(getHumanChoice());
+
