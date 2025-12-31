@@ -16,15 +16,18 @@ html, body {
     height: 100vh;
     width: 100vw;
 
-    /* overflow: hidden; */
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
 }
 
 /*header*/
 h1 {
 
     margin: 0;
-    padding-top: 42px;
-    padding-bottom: 42px;
+    padding-top: 32px;
+    padding-bottom: 32px;
 
     word-spacing: 15px;
 
@@ -61,7 +64,9 @@ h1 {
     align-items: center;
     justify-content: center;
 
-    padding: 35px;
+    padding-top: 30px;
+    padding-bottom: 35px;
+
     gap: 5px;
 }
 .description h2 {
@@ -86,7 +91,7 @@ h1 {
 
     gap: 100px;
 
-    margin-bottom: 60px;
+    margin-bottom: 55px;
 }
 .score-content {
 
@@ -111,6 +116,8 @@ h1 {
     justify-content: center;
     align-items: center;
     gap: 160px;
+
+    margin-bottom: 22px;
 }
 .rps-options img {
 
@@ -128,3 +135,25 @@ h1 {
     transform: scale(1.08);
 }
 /*content*/
+
+
+/*footer*/
+footer {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    font-family: "Spectral", serif;
+    font-weight: 600;
+    font-size: 25px;
+    font-style: normal;
+    color: white;
+    word-spacing: 4px;
+    
+    flex: 1;
+
+    background-color: #0B1020;
+}
+/*footer*/
