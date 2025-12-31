@@ -14,104 +14,145 @@ function getComputerChoice() {
             return "scissors";
     }
 }
+function playRound(humanChoice, computerChoice) {
 
-function getHumanChoice() {
+    switch(humanChoice) {
 
-    return prompt("Please enter one of these 3 values: rock, paper, scissors");
+        case "rock":
+
+            if(computerChoice === "rock")
+                return "draw";
+                
+            else if(computerChoice === "paper") {
+
+                computerScore++;
+                return "lose";
+            }
+
+            else {
+
+                humanScore++;
+                return "win";
+            }
+
+            break;
+
+
+        case "paper":
+
+            if(computerChoice === "rock") {
+
+                humanScore++;
+                return "win";
+            }
+                
+            else if(computerChoice === "paper") 
+                return "draw";
+                
+            else {
+
+                computerScore++;
+                return "lose";
+            }
+
+            break;
+
+
+        default:
+
+            if(computerChoice === "rock") {
+
+                computerScore++;
+                return "lose";
+            }
+                
+            else if(computerChoice === "paper") {
+
+                humanScore++;
+                return "win";
+            }
+
+            else 
+                return "draw!";
+        }
 }
 
-function playGame() {
+let humanScore = 0, computerScore = 0;
 
-    let humanScore = 0, computerScore = 0;
+//rps options
+const rockImage = document.querySelector("#rock");
+const paperImage = document.querySelector("#paper");
+const scissorsImage = document.querySelector("#scissors");
 
-    function playRound(humanChoice, computerChoice) {
+//scores
+const warriorParagraph = document.querySelector("#warriorPara");
+const dragonParagraph = document.querySelector("#dragonPara");
 
-        humanChoice = humanChoice.toLowerCase();
+rockImage.addEventListener("click", () => {
 
-        switch(humanChoice) {
+    const computerChoice = getComputerChoice();
+    const humanChoice = "rock";
+    const playerRound = playRound(humanChoice, computerChoice);
 
-            case "rock":
+    if(playerRound === "win") {
 
-                if(computerChoice === "rock")
-                    console.log("Draw!");
-                
-                else if(computerChoice === "paper") {
+        const text = "Warrior " + humanScore.toString();
 
-                    computerScore++;
-                    console.log("You lose! Paper beats Rock.");
-                }
-
-                else {
-
-                    humanScore++;
-                    console.log("You win! Rock beats scissors.");
-                }
-
-                break;
-
-
-            case "paper":
-
-                if(computerChoice === "rock") {
-
-                    humanScore++;
-                    console.log("You win! Paper beats rock.");
-                }
-                
-                else if(computerChoice === "paper") 
-                    console.log("Draw!");
-                
-                else {
-
-                    computerScore++;
-                    console.log("You lose! Scissors beats Paper.");
-                }
-
-                break;
-
-
-            default:
-
-                if(computerChoice === "rock") {
-
-                    computerScore++;
-                    console.log("You lose! Rock beats Scissors.");
-                }
-                
-                else if(computerChoice === "paper") {
-
-                    humanScore++;
-                    console.log("You win! Scissors beats paper.");
-                }
-
-                else 
-                    console.log("Draw!");
-        }
+        warriorParagraph.textContent = text;
     }
 
-    for(let i = 0; i < 5; ++i) {
+    if(playerRound === "lose") {
 
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
+        const text = "Dragon: " + computerScore.toString();
 
-        playRound(humanSelection, computerSelection);
+        dragonParagraph.textContent = text;
+    }
+
+});
+
+paperImage.addEventListener("click", () => {
+
+    const computerChoice = getComputerChoice();
+    const humanChoice = "paper";
+    const playerRound = playRound(humanChoice, computerChoice);
+
+    if(playerRound === "win") {
+
+        const text = "Warrior " + humanScore.toString();
+
+        warriorParagraph.textContent = text;
+    }
+
+    if(playerRound === "lose") {
+
+        const text = "Dragon: " + computerScore.toString();
+
+        dragonParagraph.textContent = text;
     }
     
-    console.log("Final score:");
-    console.log("Human:", humanScore);
-    console.log("Computer:", computerScore);
+});
 
-    if(humanScore > computerScore) 
-        console.log("You won the game!");
+scissorsImage.addEventListener("click", () => {
 
-    else if(humanScore < computerScore) 
-        console.log("Computer won the game!");
+    const computerChoice = getComputerChoice();
+    const humanChoice = "scissors";
+    const playerRound = playRound(humanChoice, computerChoice);
 
-    else
-        console.log("Draw");
-}
+    if(playerRound === "win") {
 
-playGame();
+        const text = "Warrior " + humanScore.toString();
+
+        warriorParagraph.textContent = text;
+    }
+
+    if(playerRound === "lose") {
+
+        const text = "Dragon: " + computerScore.toString();
+
+        dragonParagraph.textContent = text;
+    }
+    
+});
 
 
 
