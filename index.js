@@ -73,7 +73,7 @@ function playRound(humanChoice, computerChoice) {
             }
 
             else 
-                return "draw!";
+                return "draw";
         }
 }
 
@@ -88,6 +88,10 @@ const scissorsImage = document.querySelector("#scissors");
 const warriorParagraph = document.querySelector("#warriorPara");
 const dragonParagraph = document.querySelector("#dragonPara");
 
+//descriptions
+const winOrLoseHeader = document.querySelector("#win-or-lose");
+const roundDescriptionHeader = document.querySelector("#round-description");
+
 rockImage.addEventListener("click", () => {
 
     const computerChoice = getComputerChoice();
@@ -96,19 +100,37 @@ rockImage.addEventListener("click", () => {
 
     if(playerRound === "win") {
 
-        const text = "Warrior " + humanScore.toString();
+        const paragraphText = "Warrior " + humanScore.toString();
+        const h2Text = "You win!";
+        const h3Text = "Rock beats Scissors";
 
-        warriorParagraph.textContent = text;
+        warriorParagraph.textContent = paragraphText;
+        winOrLoseHeader.textContent = h2Text;
+        roundDescriptionHeader.textContent = h3Text;
     }
 
     if(playerRound === "lose") {
 
-        const text = "Dragon: " + computerScore.toString();
+        const paragraphText = "Dragon: " + computerScore.toString();
+        const h2Text = "You lose!";
+        const h3Text = "Paper beats Rock";
 
-        dragonParagraph.textContent = text;
+        dragonParagraph.textContent = paragraphText;
+        winOrLoseHeader.textContent = h2Text;
+        roundDescriptionHeader.textContent = h3Text;
+    }
+
+    if(playerRound === "draw") {
+
+        const h2Text = "Draw!";
+        const h3Text = "Rock ties Rock";
+
+        winOrLoseHeader.textContent = h2Text;
+        roundDescriptionHeader.textContent = h3Text;
     }
 
 });
+
 
 paperImage.addEventListener("click", () => {
 
@@ -118,19 +140,37 @@ paperImage.addEventListener("click", () => {
 
     if(playerRound === "win") {
 
-        const text = "Warrior " + humanScore.toString();
+        const paragraphText = "Warrior " + humanScore.toString();
+        const h2Text = "You win!";
+        const h3Text = "Paper beats Rock";
 
-        warriorParagraph.textContent = text;
+        warriorParagraph.textContent = paragraphText;
+        winOrLoseHeader.textContent = h2Text;
+        roundDescriptionHeader.textContent = h3Text;
     }
 
     if(playerRound === "lose") {
 
-        const text = "Dragon: " + computerScore.toString();
+        const paragraphText = "Dragon: " + computerScore.toString();
+        const h2Text = "You lose!";
+        const h3Text = "Scissors beats Paper";
 
-        dragonParagraph.textContent = text;
+        dragonParagraph.textContent = paragraphText;
+        winOrLoseHeader.textContent = h2Text;
+        roundDescriptionHeader.textContent = h3Text;
     }
-    
+
+    if(playerRound === "draw") {
+
+        const h2Text = "Draw!";
+        const h3Text = "Paper ties Paper";
+
+        winOrLoseHeader.textContent = h2Text;
+        roundDescriptionHeader.textContent = h3Text;
+    }
+
 });
+
 
 scissorsImage.addEventListener("click", () => {
 
@@ -140,19 +180,34 @@ scissorsImage.addEventListener("click", () => {
 
     if(playerRound === "win") {
 
-        const text = "Warrior " + humanScore.toString();
+        const paragraphText = "Warrior " + humanScore.toString();
+        const h2Text = "You win!";
+        const h3Text = "Scissors beats Paper";
 
-        warriorParagraph.textContent = text;
+        warriorParagraph.textContent = paragraphText;
+        winOrLoseHeader.textContent = h2Text;
+        roundDescriptionHeader.textContent = h3Text;
     }
 
     if(playerRound === "lose") {
 
-        const text = "Dragon: " + computerScore.toString();
+        const paragraphText = "Dragon: " + computerScore.toString();
+        const h2Text = "You lose!";
+        const h3Text = "Rock beats Scissors";
 
-        dragonParagraph.textContent = text;
+        dragonParagraph.textContent = paragraphText;
+        winOrLoseHeader.textContent = h2Text;
+        roundDescriptionHeader.textContent = h3Text;
     }
-    
+
+    if(playerRound === "draw") {
+
+        const h2Text = "Draw!";
+        const h3Text = "Scissors ties Scissors";
+
+        winOrLoseHeader.textContent = h2Text;
+        roundDescriptionHeader.textContent = h3Text;
+    }
+
 });
-
-
 
