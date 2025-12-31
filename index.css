@@ -1,0 +1,33 @@
+/* Midnight Navy #0B1020 (fundal)
+
+Antique Gold #C2A34A (accente/butoane/ramă) */
+
+html, body {
+
+    margin: 0;
+    padding: 0;
+
+    height: 100vh;
+    width: 100vw;
+
+    overflow: hidden;
+}
+
+h1 {
+
+    margin: 0;
+    padding-top: 42px;
+    padding-bottom: 42px;
+
+    word-spacing: 15px;
+
+    font-family: "Cinzel", serif;   
+    font-size: 50px;
+    text-transform: uppercase;
+    
+    text-align: center;
+
+    background-color: #0B1020;
+    color: white;
+}
+
