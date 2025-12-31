@@ -26,8 +26,8 @@ html, body {
 h1 {
 
     margin: 0;
-    padding-top: 32px;
-    padding-bottom: 32px;
+    padding-top: 28px;
+    padding-bottom: 28px;
 
     word-spacing: 15px;
 
@@ -117,7 +117,7 @@ h1 {
     align-items: center;
     gap: 160px;
 
-    margin-bottom: 22px;
+    margin-bottom: 27px;
 }
 .rps-options img {
 
